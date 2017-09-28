@@ -8,10 +8,10 @@ import com.pangaj.shruthi.newprojectimportsetup.R;
 /**
  * Created by pangaj on 23/09/17.
  */
-public class RANavigationActivity extends NPBaseActivity {
+public class NPNavigationActivity extends NPBaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.np_activity_login);
+        setContentView(R.layout.np_activity_navigation);
     }
 }

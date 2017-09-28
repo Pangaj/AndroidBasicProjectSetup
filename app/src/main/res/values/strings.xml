@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NewProjectImportSetup</string>
+    <string name="app_name">Android Setup</string>
     <string name="yet_to_implement">Yet to implement</string>
     <string name="internet_connection_offline">No internet connection. Please try later</string>
     <string name="alert_dialog_ok">Okay</string>
@@ -8,4 +8,7 @@
     <string name="login">Login</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
+    <string name="email_not_valid">Email is not valid</string>
+    <string name="password_not_valid">Password not valid</string>
+    <string name="splash_image">splash_image</string>
 </resources>

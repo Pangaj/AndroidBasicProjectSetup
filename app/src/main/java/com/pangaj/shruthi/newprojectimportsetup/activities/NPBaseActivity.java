@@ -196,8 +196,26 @@ public class NPBaseActivity extends AppCompatActivity {
         super.onResume();
     }
 
-    public void goToActivity(Activity fromActivity, Class<? extends Activity>  toActivity) {
+    public void goToActivity(Activity fromActivity, Class<? extends Activity> toActivity) {
+        goToActivitywithNewAndBundle(fromActivity, toActivity, null, false);
+    }
+
+    public void goToActivityAsNew(Activity fromActivity, Class<? extends Activity> toActivity) {
+        goToActivitywithNewAndBundle(fromActivity, toActivity, null, true);
+    }
+
+    public void goToActivitywithBundle(Activity fromActivity, Class<? extends Activity> toActivity, Bundle bundle) {
+        goToActivitywithNewAndBundle(fromActivity, toActivity, bundle, true);
+    }
+
+    private void goToActivitywithNewAndBundle(Activity fromActivity, Class<? extends Activity> toActivity, Bundle bundle, boolean isStartAsNew) {
         Intent intent = new Intent(fromActivity, toActivity);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        if (isStartAsNew) {
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        }
         startActivity(intent);
     }
 }

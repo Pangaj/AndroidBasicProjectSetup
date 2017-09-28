@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NewProjectImportSetup</string>
+    <string name="yet_to_implement">Yet to implement</string>
+    <string name="internet_connection_offline">No internet connection. Please try later</string>
+    <string name="alert_dialog_ok">Okay</string>
+    <string name="alert_dialog_cancel">Cancel</string>
+    <string name="welcome">Welcome</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+</resources>

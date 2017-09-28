@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+//crashlytics - add it when ever you need else remove it
+//apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "25.0.3"
+    defaultConfig {
+        applicationId "com.pangaj.shruthi.newprojectimportsetup"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        productionAPI {
+            applicationId 'com.pangaj.shruthi.newprojectimportsetup'
+            buildConfigField 'String', 'BASE_URL', ' "https://production-API.com/" '
+            buildConfigField 'String', 'GEOCODING_SERVER_KEY', ' "AIxxxxxxxxxxVL2-xxxxxxxxxxxxxxxxxxxxIKw" '
+        }
+        devAPI {
+            applicationId 'com.pangaj.shruthi.newprojectimportsetup.dev'
+            buildConfigField 'String', 'BASE_URL', ' "https://development-API.com/" '
+            buildConfigField 'String', 'GEOCODING_SERVER_KEY', ' "AIxxxxxxxxxxVL2-xxxxxxxxxxxxxxxxxxxxIKw" '
+        }
+    }
+}
+
+//crashlytics - add it when ever you need else remove it
+/*buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}*/
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support:design:26.+'
+    //crashlytics - add it when ever you need else remove it
+    /*   compile('com.crashlytics.sdk.android:crashlytics:2.6.7@aar') {
+           transitive = true;
+       }*/
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    //Analytics
+    compile 'com.google.android.gms:play-services-analytics:11.0.4'
+    //geoCoding
+    compile 'com.google.maps:google-maps-services:0.2.3'
+    //RetroFit
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    //EventBus
+    compile 'org.greenrobot:eventbus:3.0.0'
+    //Rounded Image View
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.makeramen:roundedimageview:2.3.0'
+    //ImageLoading
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    //multiDex support
+    compile 'com.android.support:multidex:1.0.1'
+    //parallex image
+    compile 'co.gofynd.library:gravity-view:1.0'
+    testCompile 'junit:junit:4.12'
+}

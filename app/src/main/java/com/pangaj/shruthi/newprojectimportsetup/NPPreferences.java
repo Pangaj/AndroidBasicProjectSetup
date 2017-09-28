@@ -9,6 +9,8 @@ import android.content.SharedPreferences;
 public class NPPreferences {
     //Keys for user data
     private static final String KEY_IS_LOGGED_IN = "is_logged_in";
+    private static final String KEY_EMAIL = "login_email";
+    private static final String KEY_PASSWORD = "login_password";
     //user profile
     private static final String PREFS = "RatingsApp";
 
@@ -29,8 +31,26 @@ public class NPPreferences {
         mPrefsWrite.commit();
     }
 
+    public String getLoginEmail() {
+        return mPrefsRead.getString(KEY_EMAIL, null);
+    }
+
+    public void setLoginEmail(String emailText) {
+        mPrefsWrite.putString(KEY_EMAIL, emailText);
+        mPrefsWrite.commit();
+    }
+
+    public String getLoginPassword() {
+        return mPrefsRead.getString(KEY_PASSWORD, null);
+    }
+
+    public void setLoginPassword(String passwordText) {
+        mPrefsWrite.putString(KEY_PASSWORD, passwordText);
+        mPrefsWrite.commit();
+    }
+
     public void clearData() {
-        //keep only default language and erase everything else
+        //Erase everything
         mPrefsWrite.clear();
         mPrefsWrite.commit();
     }

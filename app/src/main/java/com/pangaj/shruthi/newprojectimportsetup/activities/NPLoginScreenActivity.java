@@ -58,16 +58,18 @@ public class NPLoginScreenActivity extends NPBaseActivity implements View.OnClic
         } else if (!NPUtilities.validatePassword(passwordText)) {
             passwordLayout.setError(getString(R.string.password_not_valid));
         } else {
-            mPref.setIsLoggedIn(true);
-            callLoginAPI();
+            callLoginAPI(emailText, passwordText);
         }
     }
 
-    private void callLoginAPI() {
+    private void callLoginAPI(final String emailText, final String passwordText) {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 dismissProgress();
+                mPref.setLoginEmail(emailText);
+                mPref.setLoginPassword(passwordText);
+                mPref.setIsLoggedIn(true);
                 goToActivity(NPLoginScreenActivity.this, NPNavigationActivity.class);
             }
         }, 3000);

@@ -56,6 +56,10 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     //Analytics
     compile 'com.google.android.gms:play-services-analytics:11.0.4'
+    //google maps
+    compile 'com.google.android.gms:play-services-maps:11.0.4'
+    //fused location
+    compile 'com.google.android.gms:play-services-location:11.0.4'
     //geoCoding
     compile 'com.google.maps:google-maps-services:0.2.3'
     //RetroFit
@@ -71,7 +75,8 @@ dependencies {
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     //multiDex support
     compile 'com.android.support:multidex:1.0.1'
-    //parallex image
-    compile 'co.gofynd.library:gravity-view:1.0'
+    //runTime permission
+    compile 'com.github.hotchemi:permissionsdispatcher:3.0.1'
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:3.0.1'
     testCompile 'junit:junit:4.12'
 }

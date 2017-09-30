@@ -9,7 +9,7 @@
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="email_not_valid">Email is not valid</string>
-    <string name="password_not_valid">Password not valid</string>
+    <string name="password_not_valid">Password must contain at least 1 in upper case, lower case and number with length 8 to 16 characters</string>
     <string name="splash_image">splash_image</string>
     <string name="title_home">Home</string>
     <string name="title_work_with_pressure">Work with pressure</string>
@@ -24,5 +24,5 @@
     <string name="work_starts_to_do_its_work_explodes_in_peace">Work starts to do its work\nExplodes in peace</string>
     <string name="logout">Logout</string>
     <string name="logout_msg">Are you sure want to logout?</string>
-    <string name="ninty_nine_plus">99+</string>
+    <string name="ninety_nine_plus">99+</string>
 </resources>

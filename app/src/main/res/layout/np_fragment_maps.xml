@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <fragment
+            android:id="@+id/fragment_maps_location"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/current_location"
+            android:src="@drawable/ic_location_marker" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.AppCompatImageButton
+        android:id="@+id/ib_current_location"
+        android:layout_width="@dimen/spacing_50"
+        android:layout_height="@dimen/spacing_50"
+        android:layout_above="@+id/fab"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/spacing_15"
+        android:background="@drawable/gps_location_background"
+        android:padding="@dimen/spacing_10"
+        android:src="@drawable/ic_location_gps" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_set_location"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_50"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/spacing_15"
+        android:background="@drawable/rounded_corner"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_18"
+        android:visibility="gone" />
+
+    <com.pangaj.shruthi.newprojectimportsetup.FAB.NPFloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="@dimen/spacing_50"
+        android:layout_height="@dimen/spacing_50"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/spacing_15"
+        android:layout_marginEnd="@dimen/spacing_15"
+        android:layout_marginStart="@dimen/spacing_15"
+        android:background="@drawable/gps_location_background" />
+
+    <!-- Overlay that dims the screen -->
+    <com.gordonwong.materialsheetfab.DimOverlayFrameLayout
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <!-- Circular reveal container for the sheet -->
+    <io.codetail.widget.RevealLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="end|bottom"
+        android:orientation="vertical">
+
+        <!-- Sheet that contains your items -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/fab_sheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- TODO: Put your sheet items here -->
+
+        </android.support.v7.widget.CardView>
+    </io.codetail.widget.RevealLinearLayout>
+</RelativeLayout>

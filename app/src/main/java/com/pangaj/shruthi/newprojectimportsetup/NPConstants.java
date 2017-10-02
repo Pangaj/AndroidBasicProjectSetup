@@ -18,6 +18,7 @@ public class NPConstants {
     public static final String LONGITUDE = "longitude";
     //    location permission
     public static final String[] LOCATION_PERMISSIONS = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
+    public static final int REQUEST_CODE_LOCATION_PERMISSION = 111;
     public static double LATITUDE_VALUE = 1000;
     public static double LONGITUDE_VALUE = 1000;
 

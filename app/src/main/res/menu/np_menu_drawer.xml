@@ -23,6 +23,12 @@
             android:title="@string/title_family"/>
 
         <item
+            android:id="@+id/nav_maps"
+            android:checked="false"
+            android:icon="@drawable/ic_maps"
+            android:title="@string/saved_locations" />
+
+        <item
             android:id="@+id/nav_settings"
             android:checked="false"
             android:icon="@drawable/ic_settings"

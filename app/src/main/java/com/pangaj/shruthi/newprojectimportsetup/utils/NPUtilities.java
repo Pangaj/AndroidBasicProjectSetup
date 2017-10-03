@@ -17,7 +17,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
 
-import com.google.maps.model.LatLng;
 import com.pangaj.shruthi.newprojectimportsetup.NPApplication;
 import com.pangaj.shruthi.newprojectimportsetup.NPPreferences;
 import com.pangaj.shruthi.newprojectimportsetup.R;
@@ -148,21 +147,5 @@ public class NPUtilities {
         } else {
             NPLog.d(TAG, "popFragment: activity is null");
         }
-    }
-
-    /*public static void setCompleteAddress(Activity mActivity, double latitude, double longitude, final NPMapCompleteAddress completeAddress) {
-        // TODO: 11/09/17 the below 2 lines are needed for FavoriteFragment - will be update once the Location updates are changed using feasible location or smart location
-        NPConstants.LATITUDE_VALUE = latitude;
-        NPConstants.LONGITUDE_VALUE = longitude;
-        RALocationManager.getInstance().getCompleteAddressString(mActivity, latitude, longitude, new RALocationManager.GeoCodingCallback() {
-            @Override
-            public void OnGeoCodeSuccess(String address) {
-                completeAddress.onSuccessCompleteListener(address);
-            }
-        });
-    }*/
-
-    public static LatLng getGeoCodingLatLng(double latitude, double longitude) {
-        return new LatLng(latitude, longitude);
     }
 }

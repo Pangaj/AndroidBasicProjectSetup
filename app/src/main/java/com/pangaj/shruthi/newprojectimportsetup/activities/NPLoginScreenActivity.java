@@ -50,6 +50,7 @@ public class NPLoginScreenActivity extends NPBaseActivity implements View.OnClic
      * Method to do validation and perform Login API
      */
     private void doLoginValidation() {
+        clearErrors();
         dismissKeyboard(this);
         String emailText = etEmail.getText().toString();
         String passwordText = etPassword.getText().toString();
@@ -58,11 +59,18 @@ public class NPLoginScreenActivity extends NPBaseActivity implements View.OnClic
         } else if (!NPUtilities.validatePassword(passwordText)) {
             passwordLayout.setError(getString(R.string.password_not_valid));
         } else {
+            clearErrors();
             callLoginAPI(emailText, passwordText);
         }
     }
 
+    private void clearErrors() {
+        emailLayout.setError(null);
+        passwordLayout.setError(null);
+    }
+
     private void callLoginAPI(final String emailText, final String passwordText) {
+        showProgress();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

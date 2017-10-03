@@ -25,7 +25,7 @@ public class NPApplication extends Application {
      */
     private static String TAG = "NPApplication";
     private static NPApplication m_instance;
-    //    private RAAPIManager mApiManager;
+    //    private NPAPIManager mApiManager;
     private NPPreferences mPreferences;
     private DisplayImageOptions profileImageOptions;
     private DisplayImageOptions defaultImageOptions;
@@ -58,7 +58,7 @@ public class NPApplication extends Application {
 
     private void initInstance() {
         mPreferences = new NPPreferences(this);
-//        mApiManager = new RAAPIManager();
+//        mApiManager = new NPAPIManager();
         initImageLoader();
     }
 
@@ -67,7 +67,7 @@ public class NPApplication extends Application {
      *
      * @return The API manager instance
      */
-    /*public RAAPIManager getAPIManager() {
+    /*public NPAPIManager getAPIManager() {
         return mApiManager;
     }*/
     public synchronized Tracker getGoogleAnalyticsTracker() {

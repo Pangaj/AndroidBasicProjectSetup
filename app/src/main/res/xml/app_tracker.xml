@@ -21,6 +21,5 @@
     <!--The inverval of time after all the collected data  should be sent to the server, in seconds.-->
     <integer name="ga_dispatchPeriod">30</integer>
 
-    <!--<screenName name=".RALoginFragment">Login Screen</screenName>-->
-    <!--<screenName name=".RASignUpFragment">SignUp Screen</screenName>-->
+    <!--<screenName name=".NPLoginFragment">Login Screen</screenName>-->
 </resources>

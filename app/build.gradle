@@ -24,12 +24,12 @@ android {
         productionAPI {
             applicationId 'com.pangaj.shruthi.newprojectimportsetup'
             buildConfigField 'String', 'BASE_URL', ' "https://production-API.com/" '
-            buildConfigField 'String', 'GEOCODING_SERVER_KEY', ' "AIxxxxxxxxxxVL2-xxxxxxxxxxxxxxxxxxxxIKw" '
+            buildConfigField 'String', 'GEOCODING_SERVER_KEY', ' "AIzaSyBLkZmdY0vno8jvRynIUx_Y1yAnxr3wM60" '
         }
         devAPI {
             applicationId 'com.pangaj.shruthi.newprojectimportsetup.dev'
             buildConfigField 'String', 'BASE_URL', ' "https://development-API.com/" '
-            buildConfigField 'String', 'GEOCODING_SERVER_KEY', ' "AIxxxxxxxxxxVL2-xxxxxxxxxxxxxxxxxxxxIKw" '
+            buildConfigField 'String', 'GEOCODING_SERVER_KEY', ' "AIzaSyBLkZmdY0vno8jvRynIUx_Y1yAnxr3wM60" '
         }
     }
 }
@@ -56,6 +56,10 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     //Analytics
     compile 'com.google.android.gms:play-services-analytics:11.0.4'
+    //google maps
+    compile 'com.google.android.gms:play-services-maps:11.0.4'
+    //fused location
+    compile 'com.google.android.gms:play-services-location:11.0.4'
     //geoCoding
     compile 'com.google.maps:google-maps-services:0.2.3'
     //RetroFit
@@ -71,7 +75,12 @@ dependencies {
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     //multiDex support
     compile 'com.android.support:multidex:1.0.1'
-    //parallex image
-    compile 'co.gofynd.library:gravity-view:1.0'
+    //runTime permission
+    compile 'com.github.hotchemi:permissionsdispatcher:3.0.1'
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:3.0.1'
+    //FAB button
+    compile 'com.gordonwong:material-sheet-fab:1.2.1'
+    //cardView support
+    compile 'com.android.support:cardview-v7:26.+'
     testCompile 'junit:junit:4.12'
 }

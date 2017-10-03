@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Android Setup</string>
+    <string name="google_maps_key">AIzaSyBLkZmdY0vno8jvRynIUx_Y1yAnxr3wM60</string>
     <string name="yet_to_implement">Yet to implement</string>
     <string name="internet_connection_offline">No internet connection. Please try later</string>
     <string name="alert_dialog_ok">Okay</string>
@@ -9,7 +10,7 @@
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="email_not_valid">Email is not valid</string>
-    <string name="password_not_valid">Password not valid</string>
+    <string name="password_not_valid">Password must contain at least 1 in upper case, lower case and number with length 8 to 16 characters</string>
     <string name="splash_image">splash_image</string>
     <string name="title_home">Home</string>
     <string name="title_work_with_pressure">Work with pressure</string>
@@ -24,5 +25,14 @@
     <string name="work_starts_to_do_its_work_explodes_in_peace">Work starts to do its work\nExplodes in peace</string>
     <string name="logout">Logout</string>
     <string name="logout_msg">Are you sure want to logout?</string>
-    <string name="ninty_nine_plus">99+</string>
+    <string name="ninety_nine_plus">99+</string>
+    <string name="current_location">current location</string>
+    <string name="saved_locations">Saved Locations</string>
+    <string name="need_location_permission_to_proceed_further">Need to grant location permission to proceed further</string>
+    <string name="location_permission_fetch_current_location">Need to grant location permission to fetch your location</string>
+    <string name="location_permission_needed">This app needs Location permission</string>
+    <string name="info">Info</string>
+    <string name="grant_location_permission">Go to Permissions to Grant Location permission</string>
+    <string name="work">Work</string>
+    <string name="set_location_for">Set Location for :</string>
 </resources>

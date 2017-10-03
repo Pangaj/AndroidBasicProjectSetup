@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <fragment
+            android:id="@+id/fragment_maps_location"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/current_location"
+            android:src="@drawable/ic_location_marker" />
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/ib_current_location"
+        android:layout_width="@dimen/spacing_50"
+        android:layout_height="@dimen/spacing_50"
+        android:layout_above="@+id/fab"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/spacing_15"
+        android:background="@drawable/gps_location_background"
+        android:backgroundTint="@color/white"
+        android:padding="@dimen/spacing_10"
+        android:src="@drawable/ic_location_gps" />
+
+    <com.pangaj.shruthi.newprojectimportsetup.FAB.NPFloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="@dimen/spacing_50"
+        android:layout_height="@dimen/spacing_50"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/spacing_15"
+        android:layout_marginEnd="@dimen/spacing_15"
+        android:layout_marginStart="@dimen/spacing_15"
+        android:background="@drawable/gps_location_background"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ic_done" />
+
+    <!-- Overlay that dims the screen -->
+    <com.gordonwong.materialsheetfab.DimOverlayFrameLayout
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <!-- Circular reveal container for the sheet -->
+    <io.codetail.widget.RevealLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:gravity="end|bottom"
+        android:orientation="vertical">
+
+        <!-- Sheet that contains your items -->
+        <android.support.v7.widget.CardView
+            android:id="@+id/fab_sheet"
+            android:elevation="@dimen/spacing_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_20"
+                android:layout_marginStart="@dimen/spacing_20"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_10"
+                    android:layout_marginTop="@dimen/spacing_15"
+                    android:text="@string/set_location_for"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/font_23" />
+
+                <TextView
+                    android:id="@+id/tv_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_15"
+                    android:layout_marginTop="@dimen/spacing_15"
+                    android:text="@string/title_home"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/font_23" />
+
+                <TextView
+                    android:id="@+id/tv_work"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_15"
+                    android:layout_marginTop="@dimen/spacing_15"
+                    android:text="@string/work"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/font_23" />
+
+                <TextView
+                    android:id="@+id/tv_family"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_15"
+                    android:layout_marginTop="@dimen/spacing_15"
+                    android:text="@string/title_family"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/font_23" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </io.codetail.widget.RevealLinearLayout>
+</RelativeLayout>

@@ -12,7 +12,7 @@ public class NPPreferences {
     private static final String KEY_EMAIL = "login_email";
     private static final String KEY_PASSWORD = "login_password";
     //user profile
-    private static final String PREFS = "RatingsApp";
+    private static final String PREFS = "NPPreferences";
 
     private final SharedPreferences mPrefsRead;
     private final SharedPreferences.Editor mPrefsWrite;

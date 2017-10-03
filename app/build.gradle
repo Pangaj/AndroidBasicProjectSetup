@@ -80,5 +80,7 @@ dependencies {
     annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:3.0.1'
     //FAB button
     compile 'com.gordonwong:material-sheet-fab:1.2.1'
+    //cardView support
+    compile 'com.android.support:cardview-v7:26.+'
     testCompile 'junit:junit:4.12'
 }

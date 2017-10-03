@@ -1,19 +1,18 @@
 package com.pangaj.shruthi.newprojectimportsetup.fragments;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.gordonwong.materialsheetfab.MaterialSheetFab;
 import com.pangaj.shruthi.newprojectimportsetup.FAB.NPFloatingActionButton;
@@ -24,10 +23,9 @@ import com.pangaj.shruthi.newprojectimportsetup.R;
  */
 
 public class NPMapFragment extends NPBaseFragment implements OnMapReadyCallback, View.OnClickListener {
+    private static MaterialSheetFab materialSheetFab;
     private Context mContext;
     private GoogleMap mGoogleMap;
-    private LatLng markerLatLng;
-    private Activity mActivity;
 
     public static NPMapFragment newInstance() {
         return new NPMapFragment();
@@ -38,18 +36,19 @@ public class NPMapFragment extends NPBaseFragment implements OnMapReadyCallback,
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.np_fragment_maps, container, false);
         mContext = getActivity().getApplicationContext();
-        ImageButton ibCurrentLocation = rootView.findViewById(R.id.ib_current_location);
+        FloatingActionButton fabCurrentLocation = rootView.findViewById(R.id.ib_current_location);
         initializeMap(this);
-        ibCurrentLocation.setOnClickListener(this);
+        fabCurrentLocation.setOnClickListener(this);
 
+        //https://github.com/gowong/material-sheet-fab - used for FAB button
         NPFloatingActionButton fab = rootView.findViewById(R.id.fab);
         View sheetView = rootView.findViewById(R.id.fab_sheet);
         View overlay = rootView.findViewById(R.id.overlay);
-        int sheetColor = getResources().getColor(R.color.white);
-        int fabColor = getResources().getColor(R.color.accent);
+        int sheetColor = ContextCompat.getColor(mContext, R.color.white);
+        int fabColor = ContextCompat.getColor(mContext, R.color.accent);
 
         // Initialize material sheet FAB
-        MaterialSheetFab materialSheetFab = new MaterialSheetFab<>(fab, sheetView, overlay, sheetColor, fabColor);
+        materialSheetFab = new MaterialSheetFab<>(fab, sheetView, overlay, sheetColor, fabColor);
 
         return rootView;
     }
@@ -83,5 +82,13 @@ public class NPMapFragment extends NPBaseFragment implements OnMapReadyCallback,
             case R.id.ib_current_location:
                 break;
         }
+    }
+
+    public static boolean checkOnBackPressListener() {
+        if (materialSheetFab.isSheetVisible()) {
+            materialSheetFab.hideSheet();
+            return false;
+        }
+        return true;
     }
 }

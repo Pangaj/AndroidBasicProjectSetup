@@ -164,6 +164,14 @@ public class NPNavigationActivity extends NPBaseActivity implements NavigationVi
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+        } else if (selectedMenuItemId != R.id.nav_home) {
+            if (selectedMenuItemId == R.id.nav_maps) {
+                if (NPMapFragment.checkOnBackPressListener()) {
+                    loadInitialFragment();
+                }
+            } else {
+                loadInitialFragment();
+            }
         } else {
             super.onBackPressed();
         }

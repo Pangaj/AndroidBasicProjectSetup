@@ -10,4 +10,5 @@
     <color name="divider">#BDBDBD</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="map_back_ground">#1D2C4D</color>
 </resources>

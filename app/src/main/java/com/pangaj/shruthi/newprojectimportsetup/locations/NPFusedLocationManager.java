@@ -56,7 +56,7 @@ public class NPFusedLocationManager implements GoogleApiClient.ConnectionCallbac
             locationRequest.setFastestInterval(1000);
 
             mCurrentLocation = bestLastKnownLocation(mContext, MIN_LAST_READ_ACCURACY, FIVE_MIN);
-            if (mCurrentLocation == null) {
+            if (mCurrentLocation == null && mGoogleApiClient != null) {
                 LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, locationRequest, new LocationListener() {
                     @Override
                     public void onLocationChanged(Location location) {
@@ -81,7 +81,9 @@ public class NPFusedLocationManager implements GoogleApiClient.ConnectionCallbac
 
         // Get the best most recent location currently available
         if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+            if (mGoogleApiClient != null) {
+                mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+            }
         }
 
         if (mCurrentLocation != null) {

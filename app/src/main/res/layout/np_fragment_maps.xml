@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -7,7 +8,8 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/map_back_ground">
 
         <fragment
             android:id="@+id/fragment_maps_location"
@@ -23,7 +25,7 @@
             android:src="@drawable/ic_location_marker" />
     </RelativeLayout>
 
-    <android.support.design.widget.FloatingActionButton
+    <ImageButton
         android:id="@+id/ib_current_location"
         android:layout_width="@dimen/spacing_50"
         android:layout_height="@dimen/spacing_50"
@@ -32,7 +34,7 @@
         android:layout_alignParentRight="true"
         android:layout_margin="@dimen/spacing_15"
         android:background="@drawable/gps_location_background"
-        android:backgroundTint="@color/white"
+        android:contentDescription="@string/gets_the_current_location"
         android:padding="@dimen/spacing_10"
         android:src="@drawable/ic_location_gps" />
 
@@ -47,8 +49,8 @@
         android:layout_marginEnd="@dimen/spacing_15"
         android:layout_marginStart="@dimen/spacing_15"
         android:background="@drawable/gps_location_background"
-        android:backgroundTint="@color/white"
-        android:src="@drawable/ic_done" />
+        android:src="@drawable/ic_done"
+        app:backgroundTint="@color/white" />
 
     <!-- Overlay that dims the screen -->
     <com.gordonwong.materialsheetfab.DimOverlayFrameLayout
@@ -68,7 +70,6 @@
         <!-- Sheet that contains your items -->
         <android.support.v7.widget.CardView
             android:id="@+id/fab_sheet"
-            android:elevation="@dimen/spacing_12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 

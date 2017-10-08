@@ -3,11 +3,11 @@ package com.pangaj.shruthi.newprojectimportsetup.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -21,7 +21,6 @@ import com.pangaj.shruthi.newprojectimportsetup.R;
 /**
  * Created by pangaj on 21/09/17.
  */
-
 public class NPMapFragment extends NPBaseFragment implements OnMapReadyCallback, View.OnClickListener {
     private static MaterialSheetFab materialSheetFab;
     private Context mContext;
@@ -31,14 +30,22 @@ public class NPMapFragment extends NPBaseFragment implements OnMapReadyCallback,
         return new NPMapFragment();
     }
 
+    public static boolean checkOnBackPressListener() {
+        if (materialSheetFab.isSheetVisible()) {
+            materialSheetFab.hideSheet();
+            return false;
+        }
+        return true;
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.np_fragment_maps, container, false);
         mContext = getActivity().getApplicationContext();
-        FloatingActionButton fabCurrentLocation = rootView.findViewById(R.id.ib_current_location);
+        ImageButton ibCurrentLocation = rootView.findViewById(R.id.ib_current_location);
         initializeMap(this);
-        fabCurrentLocation.setOnClickListener(this);
+        ibCurrentLocation.setOnClickListener(this);
 
         //https://github.com/gowong/material-sheet-fab - used for FAB button
         NPFloatingActionButton fab = rootView.findViewById(R.id.fab);
@@ -82,13 +89,5 @@ public class NPMapFragment extends NPBaseFragment implements OnMapReadyCallback,
             case R.id.ib_current_location:
                 break;
         }
-    }
-
-    public static boolean checkOnBackPressListener() {
-        if (materialSheetFab.isSheetVisible()) {
-            materialSheetFab.hideSheet();
-            return false;
-        }
-        return true;
     }
 }

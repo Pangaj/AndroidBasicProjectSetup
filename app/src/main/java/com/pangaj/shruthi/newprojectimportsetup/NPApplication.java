@@ -14,6 +14,7 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.pangaj.shruthi.newprojectimportsetup.analytics.NPAnalyticsTrackers;
+import com.pangaj.shruthi.newprojectimportsetup.locations.NPFusedLocationManager;
 import com.pangaj.shruthi.newprojectimportsetup.utils.NPLog;
 
 /**
@@ -59,6 +60,8 @@ public class NPApplication extends Application {
     private void initInstance() {
         mPreferences = new NPPreferences(this);
 //        mApiManager = new NPAPIManager();
+        //to create GoogleApiClient for Location services
+        new NPFusedLocationManager(this);
         initImageLoader();
     }
 

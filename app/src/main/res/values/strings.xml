@@ -35,4 +35,5 @@
     <string name="grant_location_permission">Go to Permissions to Grant Location permission</string>
     <string name="work">Work</string>
     <string name="set_location_for">Set Location for :</string>
+    <string name="gets_the_current_location">Gets the Current Location</string>
 </resources>
